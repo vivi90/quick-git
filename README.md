@@ -3,7 +3,7 @@ QuickGit
 
 About
 -----
-This project is a collection of simple shell scripts with GUI for Git.
+This project is a collection of simple Debian based bash scripts with GUI for Git.
 
 Requirements
 ------------
