@@ -19,7 +19,7 @@ if [ ! -z "$email" ]; then
 fi
 
 # Install LFS
-zenity --title "$DIALOG_TITLE" --question --text "Do you want to install LFS?"
+zenity --title "$DIALOG_TITLE" --question --text "Do you want to install LFS (this only works on Debian and other apt-based distributions)?"
 if [ "$?" -eq "0" ]; then
 	wget https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
 	sudo os=debian dist=stretch bash ./script.deb.sh
