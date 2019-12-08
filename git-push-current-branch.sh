@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#################################
+# Usage:                        #
+# "script.sh username password" #
+# or                            #
+# "script.sh"                   #
+#################################
+
 # Remote
 REMOTE="origin"
 
@@ -10,7 +17,11 @@ REMOTE_URL=$(git remote get-url --push "$REMOTE")
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 # Gets the credentials
-CREDENTIALS=$(zenity --title "Push current branch." --password --username)
+if [[ -z "$1" || -z "$2" ]]; then
+	CREDENTIALS=$(zenity --title "Push current branch." --password --username)
+else
+	CREDENTIALS="$1|$2";
+fi
 
 # Push to remote
 if [ ! -z "$CREDENTIALS" ]; then
