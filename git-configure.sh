@@ -7,6 +7,7 @@ DIALOG_TITLE="Git configuration"
 git config --global gui.encoding utf-8
 git config --global core.quotepath off
 git config --global credential.helper cache
+git config --global core.preloadIndex true
 name=$(git config --global user.name)
 name=$(zenity --title "$DIALOG_TITLE" --entry --text "Please enter your name:" --entry-text "$name")
 if [ ! -z "$name" ]; then
